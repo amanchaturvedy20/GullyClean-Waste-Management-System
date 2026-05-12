@@ -43,69 +43,49 @@ GullyClean_Waste_management_system/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/abhishekkumar5115/GullyClean_Waste_management_system.git
+   git clone https://github.com/amanchaturvedy20/GullyClean-Waste-Management-System.git
+   cd GullyClean-Waste-Management-System
    ```
 
-2. **Setup the Backend:**
+2. **Install all dependencies:**
+   From the root folder, run:
    ```bash
-   cd backend
    npm install
-   ```
-   Create a `.env` file in the `backend` directory:
-   ```env
-   PORT=3000
-   MONGO_URL=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret
-   CLOUDINARY_CLOUD_NAME=your_cloud_name
-   CLOUDINARY_API=your_cloudinary_api_key
-   CLOUDINARY_SECRET=your_cloudinary_api_secret
+   npm run install-all
    ```
 
-3. **Setup the Frontends (Citizen, Worker, Admin):**
-   You will need to run `npm install` inside each of the three frontend directories:
-   ```bash
-   cd frontend && npm install
-   cd ../worker && npm install
-   cd ../admin && npm install
-   ```
-
-   For each frontend, create a `.env` file containing the deployed backend URL:
-   ```env
-   VITE_API_URL=http://localhost:3000/api
-   ```
+3. **Setup Environment Variables:**
+   - Create a `.env` file in the `backend` directory:
+     ```env
+     PORT=3000
+     MONGO_URL=your_mongodb_connection_string
+     JWT_SECRET=your_jwt_secret
+     CLOUDINARY_CLOUD_NAME=your_cloud_name
+     CLOUDINARY_API=your_cloudinary_api_key
+     CLOUDINARY_SECRET=your_cloudinary_api_secret
+     ```
+   - For each frontend (`frontend`, `worker`, `admin`), create a `.env` file:
+     ```env
+     VITE_API_URL=http://localhost:3000/api
+     ```
 
 ---
 
 ## 🏃‍♂️ Running the System Locally
 
-To test the full ecosystem locally, you will need to open **four** separate terminal windows.
+We have integrated a **Unified Launcher Dashboard** that starts all four services automatically!
 
-1. **Start the Backend:**
-   ```bash
-   cd backend
-   npm run dev
-   ```
+From the root project directory, simply run:
+```bash
+npm start
+```
 
-2. **Start the Citizen Portal:**
-   ```bash
-   cd frontend
-   npm run dev
-   # Accessible at http://localhost:5173
-   ```
+This single command will:
+1. Open a beautiful **Launcher Dashboard** in your default web browser.
+2. Automatically start the **Backend API**, **Citizen Portal**, **Worker Portal**, and **Admin Portal** in the background.
+3. Show you live status indicators to confirm when each service is online.
 
-3. **Start the Worker Portal:**
-   ```bash
-   cd worker
-   npm run dev
-   # Accessible at http://localhost:5174
-   ```
-
-4. **Start the Admin Portal:**
-   ```bash
-   cd admin
-   npm run dev
-   # Accessible at http://localhost:5175
-   ```
+*Press `Ctrl+C` in the terminal when you want to shut down all services.*
 
 ---
 

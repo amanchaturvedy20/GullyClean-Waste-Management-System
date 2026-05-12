@@ -1,0 +1,14 @@
+{
+  "name": "gullyclean-launcher",
+  "version": "1.0.0",
+  "description": "GullyClean Waste Management System - Unified Launcher",
+  "scripts": {
+    "start": "node start-all.js",
+    "dev": "npx concurrently -n \"API,CITIZEN,WORKER,ADMIN\" -c \"yellow,green,blue,magenta\" \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\" \"npm run dev --prefix worker\" \"npm run dev --prefix admin\"",
+    "install-all": "npm install --prefix backend && npm install --prefix frontend && npm install --prefix worker && npm install --prefix admin"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "open": "^10.1.0"
+  }
+}
